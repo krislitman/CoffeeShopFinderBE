@@ -6,9 +6,9 @@ from .serializers import CoffeeShopSerializer, FavoriteShopSerializer
 
 class CoffeeShopViewSet(viewsets.ModelViewSet):
     queryset = CoffeeShop.objects.all()
-    serializer_class = (CoffeeShopSerializer, )
+    serializer_class = CoffeeShopSerializer
 
 
 class FavoriteShopViewSet(viewsets.ModelViewSet):
     queryset = FavoriteShop.objects.all()
-    serializer_class = (FavoriteShopSerializer, )
+    serializer_class = FavoriteShopSerializer

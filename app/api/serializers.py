@@ -4,8 +4,8 @@ from .models import CoffeeShop, FavoriteShop
 
 class CoffeeShopSerializer(serializers.ModelSerializer):
     class Meta:
-        type = CoffeeShop
-        attributes = {
+        model = CoffeeShop
+        fields = (
             'id',
             'name',
             'location',
@@ -16,15 +16,15 @@ class CoffeeShopSerializer(serializers.ModelSerializer):
             'rating',
             'phone',
             'yelp_id'
-        }
+        )
 
 
 class FavoriteShopSerializer(serializers.ModelSerializer):
     class Meta:
-        type = FavoriteShop
-        attributes = {
+        model = FavoriteShop
+        fields = (
             'id',
             'coffeeshop',
             'user',
             'rating'
-        }
+        )
