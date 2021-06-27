@@ -18,13 +18,15 @@ class CoffeeShopViewSet(viewsets.ModelViewSet):
             # TODO Will need to change this to current user, not 1
             current_user = User.objects.get(id=1)
             rating = request.data['rating']
-            FavoriteShop.objects.create(
+            shop = FavoriteShop.objects.create(
                 user=current_user,
                 coffeeshop=current_shop,
                 rating=rating
             )
+            serialized = FavoriteShopSerializer(shop, many=False)
             response = {
-                'message': 'Favorite Shop Added'
+                'message': 'Favorite Shop Added',
+                'favorite': serialized.data
             }
             return Response(response, status=status.HTTP_201_CREATED)
         else:
