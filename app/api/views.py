@@ -5,6 +5,7 @@ from rest_framework.decorators import action
 from .models import CoffeeShop, FavoriteShop
 from django.contrib.auth.models import User
 from .serializers import CoffeeShopSerializer, FavoriteShopSerializer
+from rest_framework.authentication import TokenAuthentication
 
 
 class CoffeeShopViewSet(viewsets.ModelViewSet):
@@ -39,6 +40,7 @@ class CoffeeShopViewSet(viewsets.ModelViewSet):
 class FavoriteShopViewSet(viewsets.ModelViewSet):
     queryset = FavoriteShop.objects.all()
     serializer_class = FavoriteShopSerializer
+    authentication_classes = (TokenAuthentication, )
 
     @action(detail=True, methods=['POST'])
     def rate_shop(self, request, pk=None):
