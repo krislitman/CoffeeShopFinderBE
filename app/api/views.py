@@ -4,7 +4,16 @@ from rest_framework.response import Response
 from rest_framework.decorators import action
 from .models import CoffeeShop, FavoriteShop
 from django.contrib.auth.models import User
-from .serializers import CoffeeShopSerializer, FavoriteShopSerializer
+from .serializers import CoffeeShopSerializer, FavoriteShopSerializer, UserSerializer
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    authentication_classes = (TokenAuthentication, )
+    permission_classes = (IsAuthenticated, )
 
 
 class CoffeeShopViewSet(viewsets.ModelViewSet):
@@ -15,8 +24,7 @@ class CoffeeShopViewSet(viewsets.ModelViewSet):
     def create_favorite(self, request, pk=None):
         if 'rating' in request.data:
             current_shop = CoffeeShop.objects.get(id=pk)
-            # TODO Will need to change this to current user, not 1
-            current_user = User.objects.get(id=1)
+            current_user = request.user
             rating = request.data['rating']
             shop = FavoriteShop.objects.create(
                 user=current_user,
@@ -54,3 +62,11 @@ class FavoriteShopViewSet(viewsets.ModelViewSet):
                 'message': 'You must provide a rating'
             }
             return Response(response, status=status.HTTP_400_BAD_REQUEST)
+
+    def create(self, request, *args, **kwargs):
+        response = {'message': 'Favorite can not be created this way'}
+        return Response(response, status=status.HTTP_400_BAD_REQUEST)
+
+    def update(self, request, *args, **kwargs):
+        response = {'message': 'Favorite can not be created this way'}
+        return Response(response, status=status.HTTP_400_BAD_REQUEST)
