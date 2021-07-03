@@ -6,16 +6,21 @@ from .models import CoffeeShop, FavoriteShop
 from django.contrib.auth.models import User
 from .serializers import CoffeeShopSerializer, FavoriteShopSerializer, UserSerializer
 from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    authentication_classes = (TokenAuthentication, )
+    permission_classes = (IsAuthenticated, )
 
 
 class CoffeeShopViewSet(viewsets.ModelViewSet):
     queryset = CoffeeShop.objects.all()
     serializer_class = CoffeeShopSerializer
+    authentication_classes = (TokenAuthentication, )
+    permission_classes = (IsAuthenticated, )
 
     @action(detail=True, methods=['POST'])
     def create_favorite(self, request, pk=None):
@@ -45,6 +50,7 @@ class FavoriteShopViewSet(viewsets.ModelViewSet):
     queryset = FavoriteShop.objects.all()
     serializer_class = FavoriteShopSerializer
     authentication_classes = (TokenAuthentication, )
+    permission_classes = (IsAuthenticated, )
 
     @action(detail=True, methods=['POST'])
     def rate_shop(self, request, pk=None):
