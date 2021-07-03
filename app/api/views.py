@@ -4,8 +4,13 @@ from rest_framework.response import Response
 from rest_framework.decorators import action
 from .models import CoffeeShop, FavoriteShop
 from django.contrib.auth.models import User
-from .serializers import CoffeeShopSerializer, FavoriteShopSerializer
+from .serializers import CoffeeShopSerializer, FavoriteShopSerializer, UserSerializer
 from rest_framework.authentication import TokenAuthentication
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 
 class CoffeeShopViewSet(viewsets.ModelViewSet):
@@ -14,10 +19,11 @@ class CoffeeShopViewSet(viewsets.ModelViewSet):
 
     @action(detail=True, methods=['POST'])
     def create_favorite(self, request, pk=None):
+        # TODO add another endpoint to create favorite
+        # TODO seperate from rating the shop
         if 'rating' in request.data:
             current_shop = CoffeeShop.objects.get(id=pk)
-            # TODO Will need to change this to current user, not 1
-            current_user = User.objects.get(id=1)
+            current_user = request.user
             rating = request.data['rating']
             shop = FavoriteShop.objects.create(
                 user=current_user,
