@@ -19,8 +19,6 @@ class UserViewSet(viewsets.ModelViewSet):
 class CoffeeShopViewSet(viewsets.ModelViewSet):
     queryset = CoffeeShop.objects.all()
     serializer_class = CoffeeShopSerializer
-    authentication_classes = (TokenAuthentication, )
-    permission_classes = (IsAuthenticated, )
 
     @action(detail=True, methods=['POST'])
     def create_favorite(self, request, pk=None):
@@ -49,8 +47,6 @@ class CoffeeShopViewSet(viewsets.ModelViewSet):
 class FavoriteShopViewSet(viewsets.ModelViewSet):
     queryset = FavoriteShop.objects.all()
     serializer_class = FavoriteShopSerializer
-    authentication_classes = (TokenAuthentication, )
-    permission_classes = (IsAuthenticated, )
 
     @action(detail=True, methods=['POST'])
     def rate_shop(self, request, pk=None):
