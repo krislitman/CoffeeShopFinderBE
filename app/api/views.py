@@ -19,8 +19,6 @@ class CoffeeShopViewSet(viewsets.ModelViewSet):
 
     @action(detail=True, methods=['POST'])
     def create_favorite(self, request, pk=None):
-        # TODO add another endpoint to create favorite
-        # TODO seperate from rating the shop
         if 'rating' in request.data:
             current_shop = CoffeeShop.objects.get(id=pk)
             current_user = request.user
