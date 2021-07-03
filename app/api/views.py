@@ -62,3 +62,11 @@ class FavoriteShopViewSet(viewsets.ModelViewSet):
                 'message': 'You must provide a rating'
             }
             return Response(response, status=status.HTTP_400_BAD_REQUEST)
+
+    def create(self, request, *args, **kwargs):
+        response = {'message': 'Favorite can not be created this way'}
+        return Response(response, status=status.HTTP_400_BAD_REQUEST)
+
+    def update(self, request, *args, **kwargs):
+        response = {'message': 'Favorite can not be created this way'}
+        return Response(response, status=status.HTTP_400_BAD_REQUEST)
