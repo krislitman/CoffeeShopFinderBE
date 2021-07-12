@@ -1,7 +1,9 @@
-# Coffee Shop Finder BE Application
+# Coffee Shop Finder
 
 ### Django API
 ==============
+
+![Special_Agent_Dale_Cooper](https://media.giphy.com/media/26mkhIj7fJHjq0JMI/giphy.gif)
 
 <!-- [![CircleCI](https://circleci.com/gh/krislitman/Song-Discovery.svg?style=shield)](https://circleci.com/gh/krislitman/Song-Discovery) -->
 
@@ -16,18 +18,19 @@ Table of Contents
 * [Running the Test Suite](#running_the_test_suite)
 * [Built With](#built_with)
 * [Versioning](#versioning)
+* [Acknowledgements](#acknowledgements)
 
-### Introduction
-------------
+
+## Introduction
+
 API for Coffee Finder application. Takes in data from the FE application via API request, creating Coffee Shop/Favorite Shop/User models in the database. Also can create Favorite Shops for a User with a rating from 1 to 10.
 
-### Key Features
-------------
+## Key Features
 #### Endpoints
 
 
-### Installation
-------------
+## Installation
+
 To receive a working copy of the application on your computer, first you will need to
 fork and clone this repository.
 
@@ -42,10 +45,9 @@ $ python3 manage.py runserver
 ```
 Now you will be able to hit the API endpoints in your browser or Postman!
 
-### Running the Test Suite
-----------------
-### Built With
--------
+## Running the Test Suite
+## Built With
+
 <ul>
 <li>
   Django
@@ -67,8 +69,8 @@ Now you will be able to hit the API endpoints in your browser or Postman!
 </li>
 </ul>
 
-### Versioning
-------------
+## Versioning
+
 <ul>
 <li>
   Python3 3.9.5
@@ -77,3 +79,7 @@ Now you will be able to hit the API endpoints in your browser or Postman!
   Django 3.2.4
 </li>
 <li>
+
+## Acknowledgements
+
+- [Giphy](https://giphy.com/)
