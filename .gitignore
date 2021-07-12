@@ -1,4 +1,5 @@
-#! Ignored Files
-
-app/app/settings.py
-
+__pycache__
+.pytest_cache
+*.pyc
+.env
+dump.rdb

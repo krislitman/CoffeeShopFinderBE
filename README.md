@@ -1,11 +1,13 @@
-# Coffee Shop Finder BE Application
+# Coffee Shop Finder
 
-### Django API 
+### Django API
 ==============
+
+![Special_Agent_Dale_Cooper](https://media.giphy.com/media/26mkhIj7fJHjq0JMI/giphy.gif)
 
 <!-- [![CircleCI](https://circleci.com/gh/krislitman/Song-Discovery.svg?style=shield)](https://circleci.com/gh/krislitman/Song-Discovery) -->
 
-© Kris Litman ([LinkedIn](https://www.linkedin.com/in/kris-litman/)) 2021<br> (Creator) 
+© Kris Litman ([LinkedIn](https://www.linkedin.com/in/kris-litman/)) 2021<br> (Creator)
 
 Table of Contents
 =================
@@ -14,36 +16,38 @@ Table of Contents
 * [Key Features](#key_features)
 * [Installation](#installation)
 * [Running the Test Suite](#running_the_test_suite)
-* [Contact](#contact)
 * [Built With](#built_with)
 * [Versioning](#versioning)
+* [Acknowledgements](#acknowledgements)
 
-### Introduction
-------------
-API for Coffee Finder application. Takes in data from the FE application, creating Coffee Shop models in the database. 
-Also can create Favorite Shops, with a rating from 1 to 10. 
 
-### Key Features
-------------
+## Introduction
+
+API for Coffee Finder application. Takes in data from the FE application via API request, creating Coffee Shop/Favorite Shop/User models in the database. Also can create Favorite Shops for a User with a rating from 1 to 10.
+
+## Key Features
 #### Endpoints
 
 
-### Installation
-------------
-Poetry Install
+## Installation
 
-### Running the Test Suite
-----------------
+To receive a working copy of the application on your computer, first you will need to
+fork and clone this repository.
 
-### Contact
--------
+Make sure have the package Poetry installed, and then run this command to
+install dependencies:
+```
+$ Poetry Install
+```
+To run a local server, run this command from the root directory:
+```
+$ python3 manage.py runserver
+```
+Now you will be able to hit the API endpoints in your browser or Postman!
 
-If you notice any bugs or have any questions feel free to:
+## Running the Test Suite
+## Built With
 
-<!-- * [file an issue](https://github.com/krislitman/Song-Discovery/issues) -->
-
-### Built With
--------
 <ul>
 <li>
   Django
@@ -60,10 +64,13 @@ If you notice any bugs or have any questions feel free to:
 <li>
   Poetry
 </li>
+<li>
+  Python-Dotenv
+</li>
 </ul>
 
-### Versioning
-------------
+## Versioning
+
 <ul>
 <li>
   Python3 3.9.5
@@ -72,3 +79,7 @@ If you notice any bugs or have any questions feel free to:
   Django 3.2.4
 </li>
 <li>
+
+## Acknowledgements
+
+- [Giphy](https://giphy.com/)
