@@ -1,11 +1,11 @@
 # Coffee Shop Finder BE Application
 
-### Django API 
+### Django API
 ==============
 
 <!-- [![CircleCI](https://circleci.com/gh/krislitman/Song-Discovery.svg?style=shield)](https://circleci.com/gh/krislitman/Song-Discovery) -->
 
-© Kris Litman ([LinkedIn](https://www.linkedin.com/in/kris-litman/)) 2021<br> (Creator) 
+© Kris Litman ([LinkedIn](https://www.linkedin.com/in/kris-litman/)) 2021<br> (Creator)
 
 Table of Contents
 =================
@@ -14,14 +14,12 @@ Table of Contents
 * [Key Features](#key_features)
 * [Installation](#installation)
 * [Running the Test Suite](#running_the_test_suite)
-* [Contact](#contact)
 * [Built With](#built_with)
 * [Versioning](#versioning)
 
 ### Introduction
 ------------
-API for Coffee Finder application. Takes in data from the FE application, creating Coffee Shop models in the database. 
-Also can create Favorite Shops, with a rating from 1 to 10. 
+API for Coffee Finder application. Takes in data from the FE application via API request, creating Coffee Shop/Favorite Shop/User models in the database. Also can create Favorite Shops for a User with a rating from 1 to 10.
 
 ### Key Features
 ------------
@@ -30,18 +28,22 @@ Also can create Favorite Shops, with a rating from 1 to 10.
 
 ### Installation
 ------------
-Poetry Install
+To receive a working copy of the application on your computer, first you will need to
+fork and clone this repository.
+
+Make sure have the package Poetry installed, and then run this command to
+install dependencies:
+```
+$ Poetry Install
+```
+To run a local server, run this command from the root directory:
+```
+$ python3 manage.py runserver
+```
+Now you will be able to hit the API endpoints in your browser or Postman!
 
 ### Running the Test Suite
 ----------------
-
-### Contact
--------
-
-If you notice any bugs or have any questions feel free to:
-
-<!-- * [file an issue](https://github.com/krislitman/Song-Discovery/issues) -->
-
 ### Built With
 -------
 <ul>
@@ -59,6 +61,9 @@ If you notice any bugs or have any questions feel free to:
 </li>
 <li>
   Poetry
+</li>
+<li>
+  Python-Dotenv
 </li>
 </ul>
 
