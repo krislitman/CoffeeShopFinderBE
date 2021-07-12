@@ -27,8 +27,39 @@ API for Coffee Finder application. Takes in data from the FE application via API
 
 ## Key Features
 #### Endpoints
+**`GET localhost:8000/api/v1/coffeeshops/`**
+ - Returns all coffee shops in the database
+ - Example Response:
 
+```
+  [
+    {
+        "id": 8,
+        "name": "Link Coffee",
+        "location": {
+            "city": "Denver, CO"
+        },
+        "is_closed": false,
+        "categories": [
+            {
+                "cool_spot": "true"
+            }
+        ],
+```
 
+**`GET localhost:8000/api/v1/favoriteshops/`**
+ - Returns all favorite shop objects in database
+ - Example Response:
+
+```
+ [
+    {
+        "id": 1,
+        "coffeeshop": 8,
+        "user": 1,
+        "rating": 9
+    },
+```
 ## Installation
 
 To receive a working copy of the application on your computer, first you will need to
